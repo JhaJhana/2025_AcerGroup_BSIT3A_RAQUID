@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jewelry Marketplace</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif, 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #dbb758; /* Yellow gold background */
+    }
+
+    header {
+      background-color: #144420; /* Dark green */
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 50px;
+      font-size: 20px;
+      padding: 20px 20px;
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      padding: 5px;
+      width: 250px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 80px;
+      font-size:30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid white;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .logout-btn {
+      background-color: #e1a82e;
+      border: none;
+      color: white;
+      font-size: 20px;
+      padding: 20px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      display: flex;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 10px;
+    }
+
+    .sidebar label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .products-container {
+      flex: 5px;
+      padding: 20px 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .top-bar .search-bar {
+      width: 300px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap:30px;
+    }
+
+    .product-card {
+      background-color: #e0dfdf;
+      border-radius: 20px;
+      padding: 15px;
+      text-align: left;
+    }
+
+    .product-card img {
+      max-width: 500%;
+      height: 300px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      margin-bottom: 5px;
+      text-align: left;
+      font-size: larger;
+    }
+
+    .wishlist {
+      font-size: 24px;
+      color: #d1a033;
+      cursor: pointer;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      background-color: #d1a033;
+      border: none;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .pagination button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 150px 30px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="search-bar">
+      <input type="text" placeholder="Search" />
+      🔍
+    </div>
+
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#" class="active">Marketplace</a>
+      <a href="#">Branch</a>
+      <a href="#">About</a>
+    </nav>
+
+    <div class="header-right">
+      🛒
+      <button class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <h3>FILTER</h3>
+      <p><strong>Category:</strong></p>
+      <label><input type="radio" name="category" checked /> ALL</label>
+      <label><input type="radio" name="category" /> Necklace</label>
+      <label><input type="radio" name="category" /> Ring</label>
+      <label><input type="radio" name="category" /> Earrings</label>
+      <label><input type="radio" name="category" /> Bracelet</label>
+      <label><input type="radio" name="category" /> Wristwatch</label>
+
+      <p style="margin-top: 30px;"><strong>Gold Type:</strong></p>
+      <label><input type="radio" name="gold" /> 18k Gold</label>
+      <label><input type="radio" name="gold" /> 22k Gold</label>
+      <label><input type="radio" name="gold" /> 24k Gold</label>
+    </aside>
+
+    <section class="products-container">
+      <div class="top-bar">
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+          🔍
+        </div>
+        <div>
+          <strong>SORT BY:</strong>
+          <select>
+            <option>Price Low to High</option>
+            <option>Price High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="kaori.jpg" alt="Kaori Pendant Necklace" />
+          <p><strong>18k Gold Kaori Pendant Necklace</strong><br>2.45g</p>
+          <p><strong>₱2,650</strong></p>
+          <div class="wishlist">♡</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="kiomi.jpg" alt="Kiomi Necklace" />
+          <p><strong>18k Gold Kiomi Pendant Necklace</strong><br>2.96g</p>
+          <p><strong>₱1,965</strong></p>
+          <div class="wishlist">♡</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="hayame.jpg" alt="Hayame Necklace" />
+          <p><strong>18k Gold Hayame Pendant Necklace</strong><br>2.35g</p>
+          <p><strong>₱2,150</strong></p>
+          <div class="wishlist">♡</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="hikari.jpg" alt="Hikari Ring" />
+          <p><strong>22k Gold Hikari Ring with Diamonds</strong><br>1.05g</p>
+          <p><strong>₱12,050</strong></p>
+          <div class="wishlist">♡</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="tsuruko.jpg" alt="Tsuruko Ring" />
+          <p><strong>24k Gold Tsuruko Ring with Diamond </strong><br>1.78g 2 ct</p>
+          <p><strong>₱15,190</strong></p>
+          <div class="wishlist">♡</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+          <img src="juli.jpg" alt="Juli Earrings" />
+          <p><strong>18k Gold Juli Earrings </strong><br>2.15g</p>
+          <p><strong>₱1,850</strong></p>
+          <div class="wishlist">♡</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+
+        <!-- Add more products as needed -->
+      </div>
+
+      <div class="pagination">
+        <button>&larr;</button>
+        <span>1/2</span>
+        <button>&rarr;</button>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
